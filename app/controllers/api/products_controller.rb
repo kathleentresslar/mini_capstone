@@ -13,4 +13,10 @@ class Api::ProductsController < ApplicationController
     @cheesecake = Product.find_by(name: "cheesecake")
     render "show_cheesecake.json.jb"
   end
+
+  def show_product
+    @product = params["product_variable"]
+    @product = Product.find_by(name: @product)
+    render "product.json.jb"
+  end
 end

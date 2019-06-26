@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     get "/all_products" => "products#show_all_products"
     get "/brownie" => "products#show_brownie"
     get "/cheesecake" => "products#show_cheesecake"
+    get "/product/:product_variable" => "products#show_product"
+    get "/product_query_url" => "products#show_product"
   end
 end
