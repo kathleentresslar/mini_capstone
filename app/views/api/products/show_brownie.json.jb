@@ -1,1 +1,6 @@
-@brownie
+{
+  name: @brownie.name,
+  price: @brownie.price,
+  image_url: @brownie.image_url,
+  description: @brownie.description,
+}

@@ -1,1 +1,6 @@
-@cheesecake
+{
+  name: @cheesecake.name,
+  price: @cheesecake.price,
+  image_url: @cheesecake.image_url,
+  description: @cheesecake.description,
+}
