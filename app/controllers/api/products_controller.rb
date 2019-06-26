@@ -15,8 +15,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def show_product
-    @product = params["product_variable"]
-    @product = Product.find_by(name: @product)
+    @product = Product.find_by(name: params["product_variable"])
     render "product.json.jb"
   end
 end
