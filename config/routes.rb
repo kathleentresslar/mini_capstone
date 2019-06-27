@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     get "/brownie" => "products#show_brownie"
     get "/cheesecake" => "products#show_cheesecake"
     get "/product/:name" => "products#show"
+    post "/products" => "products#create"
   end
 end

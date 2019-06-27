@@ -18,4 +18,14 @@ class Api::ProductsController < ApplicationController
     @product = Product.find_by(name: params["name"])
     render "show.json.jb"
   end
+
+  def create
+    @product = Product.new(
+      name: params["name"],
+      price: params["price"],
+      description: params["description"],
+    )
+    @product.save
+    render "show.json.jb"
+  end
 end
