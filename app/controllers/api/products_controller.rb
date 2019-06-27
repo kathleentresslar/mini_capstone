@@ -1,7 +1,7 @@
 class Api::ProductsController < ApplicationController
-  def show_all_products
+  def index
     @products = Product.all
-    render "all_products.json.jb"
+    render "index.json.jb"
   end
 
   def show_brownie
@@ -14,8 +14,8 @@ class Api::ProductsController < ApplicationController
     render "show_cheesecake.json.jb"
   end
 
-  def show_product
-    @product = Product.find_by(name: params["product_variable"])
-    render "product.json.jb"
+  def show
+    @product = Product.find_by(name: params["name"])
+    render "show.json.jb"
   end
 end
