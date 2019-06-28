@@ -15,7 +15,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find_by(name: params["name"])
+    @product = Product.find_by(id: params["id"])
     render "show.json.jb"
   end
 
@@ -27,5 +27,22 @@ class Api::ProductsController < ApplicationController
     )
     @product.save
     render "show.json.jb"
+  end
+
+  def update
+    @product = Product.find_by(id: params["id"])
+    @product.name = params["name"] || @product.name
+    @product.price = params["price"] || @product.price
+    @product.description = params["description"] || @product.description
+    @product.save
+
+    render "show.json.jb"
+  end
+
+  def destroy
+    @product = Product.find_by(id: params["id"])
+    @product.destroy
+
+    render json: { message: "Product successfully destroyed! buh bye" }
   end
 end

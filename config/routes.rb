@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     get "/products" => "products#index"
     get "/brownie" => "products#show_brownie"
     get "/cheesecake" => "products#show_cheesecake"
-    get "/product/:name" => "products#show"
+    get "/product/:id" => "products#show"
     post "/products" => "products#create"
+    patch "/product/:id" => "products#update"
+    delete "/product/:id" => "products#destroy"
   end
 end
