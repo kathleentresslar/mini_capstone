@@ -4,16 +4,6 @@ class Api::ProductsController < ApplicationController
     render "index.json.jb"
   end
 
-  def show_brownie
-    @brownie = Product.find_by(name: "brownie")
-    render "show_brownie.json.jb"
-  end
-
-  def show_cheesecake
-    @cheesecake = Product.find_by(name: "cheesecake")
-    render "show_cheesecake.json.jb"
-  end
-
   def show
     @product = Product.find_by(id: params["id"])
     render "show.json.jb"
@@ -34,6 +24,7 @@ class Api::ProductsController < ApplicationController
     @product.name = params["name"] || @product.name
     @product.price = params["price"] || @product.price
     @product.description = params["description"] || @product.description
+    @product.image_url = params["image_url"] || @product.image_url
     @product.save
 
     render "show.json.jb"
