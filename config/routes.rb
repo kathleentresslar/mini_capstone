@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     get "/suppliers/:id" => "suppliers#show"
     patch "/suppliers/:id" => "suppliers#update"
     post "/suppliers" => "suppliers#create"
+    post "/images" => "images#create"
   end
 end

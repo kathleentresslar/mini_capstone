@@ -7,11 +7,19 @@ class Product < ApplicationRecord
     return price <= 10
   end
 
+  def supplier
+    Supplier.find_by(id: supplier_id)
+  end
+
   def tax
     price * 0.09
   end
 
   def total
     price + tax
+  end
+
+  def images
+    Image.where(product_id: self.id)
   end
 end

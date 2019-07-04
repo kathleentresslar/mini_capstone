@@ -14,10 +14,8 @@ class Api::ProductsController < ApplicationController
       @products = @products.order(params[:sort] => :asc)
     elsif params[:sort] && params[:sort_order]
       @products = @products.order(params[:sort] => params[:sort_order])
-    else @products = @products.order(:id => :asc)     
-    end
-
-    render "index.json.jb"
+    else @products = @products.order(:id => :asc)
+      render "index.json.jb"     end
   end
 
   def show
@@ -30,6 +28,7 @@ class Api::ProductsController < ApplicationController
       name: params["name"],
       price: params["price"],
       description: params["description"],
+      supplier_id: params["supplier_id "],
     )
     if @product.save
       render "show.json.jb"
@@ -43,7 +42,6 @@ class Api::ProductsController < ApplicationController
     @product.name = params["name"] || @product.name
     @product.price = params["price"] || @product.price
     @product.description = params["description"] || @product.description
-    @product.image_url = params["image_url"] || @product.image_url
 
     if @product.save
       render "show.json.jb"
