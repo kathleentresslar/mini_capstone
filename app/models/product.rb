@@ -7,9 +7,6 @@ class Product < ApplicationRecord
     return price <= 10
   end
 
-  # def supplier
-  #   Supplier.find_by(id: supplier_id)
-  # end
   belongs_to :supplier
 
   def tax
@@ -20,8 +17,5 @@ class Product < ApplicationRecord
     price + tax
   end
 
-  # def images
-  #   Image.where(product_id: self.id)
-  # end
   has_many :images
 end
