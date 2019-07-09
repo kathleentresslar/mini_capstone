@@ -14,8 +14,8 @@ class Api::ProductsController < ApplicationController
       @products = @products.order(params[:sort] => :asc)
     elsif params[:sort] && params[:sort_order]
       @products = @products.order(params[:sort] => params[:sort_order])
-    else @products = @products.order(:id => :asc)
-      render "index.json.jb"     end
+    else @products = @products.order(:id => :asc)     end
+    render "index.json.jb"
   end
 
   def show
