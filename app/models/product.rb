@@ -7,8 +7,6 @@ class Product < ApplicationRecord
     return price <= 10
   end
 
-  belongs_to :supplier
-
   def tax
     price * 0.09
   end
@@ -17,5 +15,7 @@ class Product < ApplicationRecord
     price + tax
   end
 
+  belongs_to :supplier
   has_many :images
+  has_many :orders
 end
