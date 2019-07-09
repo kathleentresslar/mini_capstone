@@ -1,8 +1,8 @@
 class Api::OrdersController < ApplicationController
   def create
     @order = Order.new(
-      product_id: params["product_id"],
-      quantity: params["quantity"],
+      product_id: params[:product_id],
+      quantity: params[:quantity],
       user_id: current_user.id,
     )
 
@@ -19,7 +19,7 @@ class Api::OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find_by(id: params["id"])
+    @order = Order.find_by(id: params[:id])
     render "show.json.jb"
   end
 end

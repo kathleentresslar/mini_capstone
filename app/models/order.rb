@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   belongs_to :product
 
   def subtotal
-    return product.price * quantity
+    return product.price.to_i * quantity.to_i
   end
 
   def tax
