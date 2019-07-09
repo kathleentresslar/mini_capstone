@@ -5,9 +5,6 @@ class Api::OrdersController < ApplicationController
       quantity: params["quantity"],
       user_id: current_user.id,
     )
-    @order.subtotal = @order.product.price * @order.quantity
-    @order.tax = @order.subtotal * 0.09
-    @order.total = @order.subtotal + @order.tax
 
     if @order.save
       render "show.json.jb"
