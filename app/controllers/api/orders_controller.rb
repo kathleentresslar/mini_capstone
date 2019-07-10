@@ -1,4 +1,6 @@
 class Api::OrdersController < ApplicationController
+  before_action :authenticate_user
+
   def create
     @order = Order.new(
       product_id: params[:product_id],
@@ -6,11 +8,8 @@ class Api::OrdersController < ApplicationController
       user_id: current_user.id,
     )
 
-    if @order.save
-      render "show.json.jb"
-    else
-      render json: { message: "didn't work!" }
-    end
+    @order.save
+    render "show.json.jb"
   end
 
   def index
