@@ -1,9 +1,15 @@
 {
-	id: order.id,
-	product_id: order.product,
-	quantity: order.quantity,
-	subtotal: order.subtotal,
-	tax: order.tax,
-	total: order.total,
+  id: order.id,
+  carted_products: order.carted_products.map do |carted_product|
+    {
+      id: carted_product.id,
+      product_id: carted_product.product_id,
+      product: carted_product.product,
+      quantity: carted_product.quantity,
+    }
+  end,
+  subtotal: order.subtotal,
+  tax: order.tax,
+  total: order.total,
 
 }
