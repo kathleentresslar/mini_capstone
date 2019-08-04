@@ -4,6 +4,7 @@
   name: product.name,
   price: product.price,
   description: product.description,
+  image_url: product.image_url,
   discount_status: product.is_discounted?,
   tax: product.tax,
   total: product.total,

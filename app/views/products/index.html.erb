@@ -2,6 +2,7 @@
 	<h2>Name: <%= product.name %></h2>
 		<h4>Price: <%= product.price %></h4>
 		<h6>Description: <%= product.description %></h6>
+		<h6>Supplier: <%= product.supplier.name %> </h6>
 				<a href="/products/<%= product.id %>">More info</a>
 		<% end %>
 

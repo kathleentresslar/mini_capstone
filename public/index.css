@@ -1,0 +1,9 @@
+body {
+	font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+	background-image: url('leaves.png')
+}
+.navbar-brand {
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 8em;
+
+}
